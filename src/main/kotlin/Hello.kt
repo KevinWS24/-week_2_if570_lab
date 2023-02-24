@@ -1,3 +1,5 @@
+//(LEARNING WHY ALMOST EVERYTHING HAS A VALUE)
+
 //fun main(args: Array<String>) {
     //val isUnit = println("This is an expression")
     //println(isUnit)
@@ -8,6 +10,8 @@
   //  println(message)
 
 //}
+
+//LEARNING MORE ABOUT FUNCTIONS
 
 import java.util.* // required import
 fun randomDay() : String {
@@ -33,3 +37,20 @@ fun feedTheFish() {
 fun main(args: Array<String>) {
     feedTheFish()
 }
+
+fun swim(speed: String = "fast") {
+    println("swimming $speed")
+}
+
+fun shouldChangeWater (day: String, temperature: Int = 22, dirty: Int = 20): Boolean {
+    return when {
+        isTooHot(temperature) -> true
+        isDirty(dirty) -> true
+        isSunday(day) -> true
+        else -> false
+    }
+}
+
+fun isTooHot(temperature: Int) = temperature > 30
+fun isDirty(dirty: Int) = dirty > 30
+fun isSunday(day: String) = day == "Sunday"
